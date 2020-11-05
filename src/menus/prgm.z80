@@ -37,27 +37,27 @@ menu_prgm_0:
   .db $DA,$00       ;IS>(
   .db $DB,$00       ;DS<(
   .db $E6,$00       ;Menu(
-  .db $  ,$00       ;prgm
+  .db $5F,$00       ;prgm
   .db $D5,$00       ;Return
   .db $D9,$00       ;Stop
-  .db $BB,$45,$00   ;DelVar
-  .db $  ,$00       ;GraphStyle(
-  .db $  ,$00       ;OpenLib(
-  .db $  ,$00       ;ExecLib
+  .db $BB,$54,$00   ;DelVar
+  .db $BB,$45,$00   ;GraphStyle(
+  .db $EF,$11,$00   ;OpenLib(
+  .db $EF,$12,$00   ;ExecLib
 menu_prgm_1:
   .db 12
-  .db $  ,$00   ;Input
-  .db $  ,$00   ;Prompt
-  .db $  ,$00   ;Disp
-  .db $  ,$00   ;DispGraph
-  .db $  ,$00   ;DispTable
-  .db $  ,$00   ;Output(
-  .db $  ,$00   ;getKey
-  .db $  ,$00   ;ClrHome
-  .db $  ,$00   ;ClrTable
-  .db $  ,$00   ;GetCalc(
-  .db $  ,$00   ;Get(
-  .db $  ,$00   ;Send(
+  .db $DC,$00       ;Input
+  .db $DD,$00       ;Prompt
+  .db $DE,$00       ;Disp
+  .db $DF,$00       ;DispGraph
+  .db $E5,$00       ;DispTable
+  .db $E0,$00       ;Output(
+  .db $AD,$00       ;getKey
+  .db $E1,$00       ;ClrHome
+  .db $FB,$00       ;ClrTable
+  .db $BB,$53,$00   ;GetCalc(
+  .db $E8,$00       ;Get(
+  .db $E7,$00       ;Send(
 ;menu_prgm_2:
 ;  .db 0           ;Number of programs will go here
 ;  .db             ;List VAT Entries of Programs
