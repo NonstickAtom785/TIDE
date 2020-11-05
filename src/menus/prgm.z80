@@ -22,7 +22,7 @@ menu_prgm_select:
 
 
 
-menu_draw_0:
+menu_prgm_0:
   .db 20
   .db $CE,$00   ;If
   .db $CF,$00   ;Then
@@ -44,7 +44,7 @@ menu_draw_0:
   .db $  ,$00   ;GraphStyle(
   .db $  ,$00   ;OpenLib(
   .db $  ,$00   ;ExecLib
-menu_draw_1:
+menu_prgm_1:
   .db 12
   .db $  ,$00   ;Input
   .db $  ,$00   ;Prompt
@@ -58,6 +58,6 @@ menu_draw_1:
   .db $  ,$00   ;GetCalc(
   .db $  ,$00   ;Get(
   .db $  ,$00   ;Send(
-;menu_draw_2:
+;menu_prgm_2:
 ;  .db 0           ;Number of programs will go here
 ;  .db             ;List VAT Entries of Programs
