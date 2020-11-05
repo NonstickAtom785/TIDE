@@ -13,3 +13,51 @@ menu_prgm_select:
   ld h,a
   ld l,a
   ret
+
+
+
+
+
+
+
+
+
+menu_draw_0:
+  .db 20
+  .db $CE,$00   ;If
+  .db $CF,$00   ;Then
+  .db $D0,$00   ;Else
+  .db $D3,$00   ;For(
+  .db $D1,$00   ;While
+  .db $D2,$00   ;Repeat
+  .db $D4,$00   ;End
+  .db $D8,$00   :Pause
+  .db $D6,$00   ;Lbl
+  .db $D7,$00   ;Goto
+  .db $DA,$00   ;IS>(
+  .db $DB,$00   ;DS<(
+  .db $E6,$00   ;Menu(
+  .db $  ,$00   ;prgm
+  .db $D5,$00   ;Return
+  .db $D9,$00   ;Stop
+  .db $  ,$00   ;DelVar
+  .db $  ,$00   ;GraphStyle(
+  .db $  ,$00   ;OpenLib(
+  .db $  ,$00   ;ExecLib
+menu_draw_1:
+  .db 12
+  .db $  ,$00   ;Input
+  .db $  ,$00   ;Prompt
+  .db $  ,$00   ;Disp
+  .db $  ,$00   ;DispGraph
+  .db $  ,$00   ;DispTable
+  .db $  ,$00   ;Output(
+  .db $  ,$00   ;getKey
+  .db $  ,$00   ;ClrHome
+  .db $  ,$00   ;ClrTable
+  .db $  ,$00   ;GetCalc(
+  .db $  ,$00   ;Get(
+  .db $  ,$00   ;Send(
+;menu_draw_2:
+;  .db 0           ;Number of programs will go here
+;  .db             ;List VAT Entries of Programs
