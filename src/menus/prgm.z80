@@ -6,20 +6,75 @@ menu_prgm_header:
 menu_prgm:
   jr c,menu_prgm_select
 menu_prgm_get:
-  scf     ;means out-of-bounds
+; scf     ;means out-of-bounds
+;A is the header
+;HL is the index
+  dec b
+  inc b
+  scf
+  ret nz
+
+  ld hl,menu_prgm_1
+  dec a
+  jr z,+_
+  ld hl,menu_prgm_2
+  dec a
+  jr z,+_
+  ld hl,menu_prgm_0
+_:
+  ld a,c
+  cp (hl)
+  ccf
+  ret c
+  inc hl
+  add hl,bc
+  add hl,bc
+  ld de,OP1
+  ldi
+  ldi
+  ld hl,OP1
+  call get_tok_str
+  ex de,hl
+  or a
   ret
+
 menu_prgm_select:
+  dec b
+  inc b
+  jp nz,menu_get_select_err
+
+  ld hl,menu_prgm_1
+  dec a
+  jr z,+_
+  ld hl,menu_prgm_2
+  dec a
+  jr z,+_
+  ld hl,menu_prgm_0
+_:
+  ld a,c
+  cp (hl)
+  jp nc,menu_get_select_err
+  inc bc
+  add hl,bc
+  add hl,bc
+
+;HL points to the second byte of the token
   xor a
-  ld h,a
-  ld l,a
+  ld de,OP1+5
+  ld (de),a
+  dec de
+  cp (hl)
+  ldd
+  ldd
+  ld bc,1
+  ld (de),a
+  dec de
+  adc a,c
+  ld (de),a
+  ex de,hl
+  scf
   ret
-
-
-
-
-
-
-
+  
 
 
 menu_prgm_0:
