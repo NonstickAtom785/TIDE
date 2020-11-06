@@ -1,6 +1,6 @@
 ;COME BACK AND FIX ROUTINE NAMES!
 
-_:
+get_tok:
   ld a,c
   cp (hl)
   ccf
@@ -17,7 +17,7 @@ _:
   or a
   ret
   
-  _:
+sel_tok:
   ld a,c
   cp (hl)
   jp nc,menu_get_select_err
