@@ -1,5 +1,3 @@
-;COME BACK AND FIX ROUTINE NAMES!
-
 get_tok:
   ld a,c
   cp (hl)
