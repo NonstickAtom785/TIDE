@@ -74,4 +74,5 @@ eraseRect:
 #include "ti8x/utility/menu.z80"
 #include "menus/draw.z80"
 #include "menus/prgm.z80"
+#include "menus/tok_get_sel.z80"
 .echo "App: ",$-$4000," bytes"
