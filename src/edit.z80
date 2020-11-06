@@ -741,6 +741,9 @@ seek_prev_line:
 _:
   call get_tok_size
 seek_next_line:
+  ;
+  ;add in end of file detection
+  ;
   ld a,(hl)
   cp $3F
   jr nz,-_
