@@ -676,7 +676,7 @@ editor_checkright:
 locate_previous_token:
   ;We need to move backward by 1 token
   ;WARNING: Right now, I'm hardcoding the format for TI-OS tokens
-  ;A token is more than one byte iff it is preceded by specific bytes
+  ;A token is more than one byte if it is preceded by specific bytes
   ;This is NOT the case for general languages, especially those like Grammer :|
 
 ; Verify that we aren't at the start of the file
@@ -699,6 +699,25 @@ locate_previous_token:
   dec hl
   ld a,(hl)
   inc hl
+;These would be the rest of the two byte token value. I didn't know if you wanted them
+;That 'WARNING' above doesn't make sense to me. Also I know this can be optimized with cpir
+;
+;  cp $5C \ jr z,+_+1
+;  cp $5D \ jr z,+_+1
+;  cp $5E \ jr z,+_+1
+;  cp $60 \ jr z,+_+1
+;  cp $61 \ jr z,+_+1
+;  cp $62 \ jr z,+_+1
+;  cp $63 \ jr z,+_+1
+;  cp $7E \ jr z,+_+1
+;  cp $AA \ jr z,+_+1
+;
+;Optimized:
+;push hl
+;ld hl,2bt          ;Where 2bt is a .db $5C,$5D,$5E,$60,etc...
+;cpir
+;pop hl
+;jr z,+_+1
   cp $BB
   jr z,+_+1
   cp $EF
