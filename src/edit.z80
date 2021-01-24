@@ -753,8 +753,9 @@ seek_next_line:
   
   ld a,(hl)
   cp $3F
+  ret z
+  inc hl
   jr nz,-_
-  ret
 
 
 key_to_tok:
